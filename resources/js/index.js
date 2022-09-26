@@ -9,6 +9,21 @@ function fetchMessages() {
       .then( response => response.json())
 }
 
+async function updateMessages() {
+  // Fetch Messages
+  const messages = await fetchMessages();
+
+  // Loop over the messages. Inside the loop we will
+      // get each message
+      // format it
+      // add it to the chatbox
+      let formattedMessages = "";
+      messages.forEach(message => {
+          formattedMessages += formatMessage(message, nameInput.value);
+      });
+      chatBox.innerHTML = formattedMessages;     
+}
+
 function formatMessage(message, myNameInput) {
   const time = new Date(message.timestamp);
   const formattedTime = `${time.getHours()}:${time.getMinutes()}`;
@@ -36,22 +51,6 @@ function formatMessage(message, myNameInput) {
           </div>
       `
   }
-}
-
-
-async function updateMessages() {
-  // Fetch Messages
-  const messages = await fetchMessages();
-
-  // Loop over the messages. Inside the loop we will
-      // get each message
-      // format it
-      // add it to the chatbox
-      let formattedMessages = "";
-      messages.forEach(message => {
-          formattedMessages += formatMessage(message, nameInput.value);
-      });
-      chatBox.innerHTML = formattedMessages;     
 }
 
 updateMessages()
