@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "index.html",
+    "start": "open index.html",
     "test": "jest",
     "test:watch": "jest --watchAll"
   },
