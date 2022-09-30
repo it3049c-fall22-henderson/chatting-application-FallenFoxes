@@ -9,9 +9,10 @@ function fetchMessages() {
       .then( response => response.json())
 }
 
-async function updateMessages() {
+ 
   // Fetch Messages
-  const messages = await fetchMessages();
+  async function updateMessages() {
+  const messages = await fetchMessages(); 
 
   // Loop over the messages. Inside the loop we will
       // get each message
@@ -81,3 +82,18 @@ sendButton.addEventListener("click", function(sendButtonClickEvent) {
   sendMessages(sender,message);
   myMessage.value = "";
 });
+
+const saveNameButton = document.getElementById('save-name');
+const messageInput = document.getElementById('messageInput');
+
+saveNameButton.addEventListener("click", function() {
+    localStorage.setItem('name', nameInput.value);
+});
+
+setInterval(function() {
+    if (!localStorage.getItem('name')){
+        messageInput.classList.add('d-none');
+    } else {
+        messageInput.classList.remove('d-none');
+    }
+}, 100);
