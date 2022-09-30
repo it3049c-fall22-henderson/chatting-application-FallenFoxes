@@ -58,6 +58,7 @@ footer {
   margin-right: 25%;
   background-color: #eee;
   position: relative;
+  color: white;
 }
 
 .yours .message:before {
@@ -119,4 +120,22 @@ footer {
   height: 20px;
   background: white;
   border-bottom-left-radius: 10px;
+}
+
+#my-name-input {
+  background-color: #363648;
+  color:white;
+}
+
+#my-name-input::webkit-input-placeholder{
+  color: lightslategrey
+}
+
+#my-message{
+  background-color: #363648;
+  color: white;
+}
+
+#my-message::-webkit-input-placeholder {
+  color:lightslategrey;
 }
