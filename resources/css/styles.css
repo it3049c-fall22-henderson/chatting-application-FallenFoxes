@@ -133,7 +133,7 @@ footer {
 
 #my-message{
   background-color: #363648;
-  color: white;
+  color: gray;
 }
 
 #my-message::-webkit-input-placeholder {
